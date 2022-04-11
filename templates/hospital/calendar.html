@@ -1,0 +1,60 @@
+<!doctype html>
+{% load static %}
+<html ng-app="pregnancyCalendar" ng-cloak>
+<head>
+  <title>PregnancyTimer.com</title>  
+  <style>
+  [ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+  }
+  </style>
+  <meta property="og:url"           content="http://pregnancytimer.com" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="PregnancyTimer.com" />
+  <meta property="og:description"   content="See an estimated due date and weeks of your pregnancy highlighted on calendar months after you choose a conception date. Length and Weight of baby by week are also colorfully displayed" />
+  <meta property="og:image"         content="http://pregnancytimer.com/images/pregnancy-directions.png" />
+  <meta name="description" content="Choose a conception-date then see the estimated due-date, along with the weeks of your pregnancy highlighted by calendar-months. The Length and Weight of baby by week are also colorfully displayed">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+<div ng-controller="PregnancyCtrl" class="main-pregnancy-application" >
+  <div class="canvas-controls" >
+    <div class="spacer-mobile">.</div>
+    <div class="conception-calendar-container" style="display:inline-block;">
+      <div class="conception-date-instructions">
+        Estimate your conception date or the date of your last period below
+      </div>
+      <div  style="display:inline-block; min-height:200px;" >
+        <uib-datepicker ng-model="dt" class="well well-sm conception-date-calendar" datepicker-options="optionsConception" template-url='uib/template/datepicker/datepicker.html'></uib-datepicker>
+      </div>
+      <div>Conception date chosen: </div>
+      <div class="conception-date-date">{{conceptionDate | date:'fullDate' }}</div>
+      <div>Potential due-date: </div>
+      <div class="conception-date-due-date">{{dueDate | date: 'fullDate'}}</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+  <script src="{% static 'lib/jquery-2.2.4.min.js' %}"></script>
+  <script src="{% static 'lib/angular.min.js' %}"></script>
+  <script src="{% static 'lib/angular-animate.min.js' %}"></script>
+
+  <link rel="stylesheet" href="{% static 'lib/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'lib/bootstrap-theme.min.css' %}">
+
+  <script src="{% static 'lib/bootstrap.min.js' %}"></script>
+  <script src="{% static 'lib/ui-bootstrap-tpls-1.3.3.js' %}"></script>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/pregnancy-canvas.js' %}"></script>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'pregnancy-timer.css' %}">
+
+</body>
+</html>
