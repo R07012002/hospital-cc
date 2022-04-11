@@ -27,7 +27,7 @@ SECRET_KEY = 'hpbv()ep00boce&o0w7z1h)st148(*m@6@-rk$nn)(n9ojj4c0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://hospitalmanagement-cc.herokuapp.com']
+ALLOWED_HOSTS = ['hospitalmanagement-cc.herokuapp.com']
 
 
 # Application definition
